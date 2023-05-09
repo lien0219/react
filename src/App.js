@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Topology from "./pages/Topology";
 
-function App() {
+const App = () => {
+  const data = {
+    nodes: [
+      { id: "node1", label: "Node 1" },
+      { id: "node2", label: "Node 2" },
+      { id: "node3", label: "Node 3" },
+    ],
+    edges: [
+      { source: "node1", target: "node2" },
+      { source: "node2", target: "node3" },
+    ],
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ width: "100%", height: "600px" }}>
+      <Topology data={data} />
     </div>
   );
-}
+};
 
 export default App;
